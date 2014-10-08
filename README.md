@@ -16,12 +16,65 @@ Research the following term and summarize your findings on it two to three sente
 Pretending we implemented the following methods, update this README with a description of each of the following and an example you've created:
 
 * `max`
+	returns the number with the highest value: max(7, 15) returns 15
+
 * `min`
+	returns the number with the lowest value: min(4, 7, 19) returns 4
+
 * `each`
+	each selects each value in an array and can apply another function to each one: 
+	var names = ["Lisa", "Emilie", "Lindsey"];
+	each(names, function (person){
+	console.log ("Hi" + person);
+	}  outputs Hi Lisa
+				Hi Emilie
+				Hi Lindsey
+
 * `map`
+accesses the values in an array and calls a function to alter them, i.e. replace them with new values/a new array
+  map:function (numList, callback) {
+  var map = [];
+  for (var i = 0; i < numList.length; i++) {
+    map.push(callback(numList[i]));
+  }
+  return(map);
+  },
+
 * `filter`: [note](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+creates a new array with all elements that have passed through the function it is applying
+ filter:function (numList, callback) {
+    var newArr = [];
+    for (var i = 0; i < numList.length; i++) {
+      if (callback(numList[i]) === true) {
+        newArr.push(numList[i]);
+      }
+    }
+      return newArr;
+    }, 
+
 * `reduce`: [note](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+	adds elements in an array together from left to right. Reduces the number of elements to one but adds them up to a sum of their values.
+	reduce:function (numList) {
+    var number = 0;
+
+    for (var i = 0; i < numList.length; i++) {
+      number = numList[i]+number;
+      }
+      return number;
+    },
+
 * `reject`: [note](http://underscorejs.org/#reject)
+returns the "rejects" of a truth function. If the function asks for numbers divisible by 2, reject will return the odd numbers into an array.
+	 reject:function (numList, callback) {
+	    var newArr = [];
+	    for (var i = 0; i < numList.length; i++) {
+	      if (callback(numList[i]) !== true) {
+	        newArr.push(numList[i]);
+	      }
+	    }
+	      return newArr;
+	    }, 
+
 
 Use the notes provided to help guide you explanation.
 
